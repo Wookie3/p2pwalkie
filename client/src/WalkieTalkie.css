@@ -1,0 +1,169 @@
+.walkie-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  padding: 15px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #7f8c8d;
+  margin-right: 10px;
+}
+
+.status-indicator.connected {
+  background-color: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+.user-list-section {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.user-card {
+  background-color: #444;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid transparent;
+}
+
+.user-card.talking {
+  border-left-color: #e74c3c;
+  background-color: #555;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.user-info span {
+  font-size: 12px;
+  color: #aaa;
+  background-color: #222;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.direct-call-btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.direct-call-btn:active {
+  background-color: #2980b9;
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ptt-button {
+  width: 100%;
+  height: 100px;
+  border-radius: 15px;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  box-shadow: 0 4px 0 #96281b;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ptt-button:active, .ptt-button.active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #96281b;
+  background: linear-gradient(145deg, #c0392b, #e74c3c);
+}
+
+.ptt-button small {
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 15px;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 3px 0 #d35400;
+}
+
+.role-btn:active, .role-btn.active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.incoming-call-alert {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: pulse 1.5s infinite;
+  z-index: 100;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+  100% { transform: translateX(-50%) scale(1); }
+}
